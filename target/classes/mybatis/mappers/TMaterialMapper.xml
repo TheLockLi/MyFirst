@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hebiace.lxy.gpcps.teacherA.mapper.TMaterialMapper">
+	<insert id="saveTMaterial">
+		insert into t_material values(
+			#{xtbh},
+			#{dYear},
+			#{sszy},
+			#{tNo},
+			#{ktbh},
+			#{jRws},
+			#{jWwfy},
+			#{jKtbg},
+			#{jXxtd},
+			#{jCqqk},
+			#{jGzjd},
+			#{jHbjd},
+			#{jCjpy},
+			#{fZqWt},
+			#{fZqPy},
+			#{fWcrq},
+			#{fWwpy},
+			#{fSxcj}
+		)
+		
+	</insert>
+	<select id="findTMaterialByKtbh" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.TMaterial">
+		select * from t_material where ktbh = #{ktbh}
+	</select>
+	
+	<delete id="deleteTMaterial">
+		delete from t_material where ktbh=#{ktbh}		
+	</delete>
+</mapper>

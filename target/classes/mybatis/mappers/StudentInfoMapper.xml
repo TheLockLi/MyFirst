@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hebiace.lxy.gpcps.teacherA.mapper.StudentInfoMapper">
+	<select id="findByFirst" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.StudentInfo">
+		select * from student_info where c_first in 
+		<foreach collection="list" item="id" separator=",">
+			#{id}
+		</foreach>
+	</select>
+	<select id="findBySecond" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.StudentInfo">
+		select * from student_info where c_second in 
+		<foreach collection="list" item="id" separator=",">
+			#{id}
+		</foreach>
+	</select>
+	<select id="findByQsFirst" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.StudentInfo">
+		select * from student_info where c_first = #{qsxtbh} and c_last is null
+	</select>
+	<select id="findByQsSecond" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.StudentInfo">
+		select * from student_info where c_second = #{qsxtbh} and c_last is null
+	</select>
+	<update id="upDateQS">
+		update student_info set c_last = #{xtbh} where s_no = #{sNo}
+	</update>
+	
+	<select id="findByQsCollect" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.StudentInfo">
+		select * from student_info where c_collcet = #{qsxtbh} and c_last is null
+	</select>
+	
+	
+</mapper>

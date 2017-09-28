@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hebiace.lxy.gpcps.teacherA.mapper.TeacherInfoMapper">
+
+	
+	<select id="findOne" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.TeacherInfo">
+		select * from teacher_info where t_code = #{tCode} and p_word = #{pWord}
+	</select>
+	<update id="updateTeacherInfo">
+		update teacher_info 
+		<set>
+			<if test="tSex != null"> t_sex=#{tSex},</if>
+			<if test="birthday != null">birthday=#{birthday},</if>
+			<if test="nationality != null">nationality=#{nationality},</if>
+			<if test="political != null"> politival=#{politival},</if>
+			<if test="eduLevel != null"> edu_level=#{eduLevel},</if>
+			<if test="degree != null"> degree=#{degree},</if>
+			<if test="prof != null"> prof=#{prof},</if>
+			<if test="post != null"> post=#{post},</if>
+			<if test="telephone != null">telephone=#{telephone},</if>
+			<if test="eMail != null"> e_mail=#{eMail},</if>
+			<if test="qqNum != null"> qq_num=#{qqNum},</if>
+			<if test="sField != null"> s_field=#{sField},</if>
+			<if test="specialty != null"> specialty=#{specialty},</if>
+			<if test="offJob != null">off_job=#{offJob},</if>
+			<if test="cComc != null"> c_comc=#{cComc},</if>
+		</set>
+	</update>
+	
+</mapper>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hebiace.lxy.gpcps.teacherA.mapper.QsInfoMapper">
+	<insert id="saveQsInfo">
+		insert into qs_info (
+			xtbh,
+			ktnd,
+			sbrq,
+			sszy,
+			ktmc,
+			ktly,
+			zdjs,
+			fdjs,
+			ktlb,
+			ktxz,
+			sfxk,
+			nycd,
+			gzl,
+			bjyy,
+			yjnr,
+			zsyq,
+			flag
+		)
+		values(
+			#{xtbh},
+			#{ktnd},
+			#{sbrq},
+			#{sszy},
+			#{ktmc},
+			#{ktly},
+			#{zdjs},
+			#{fdjs},
+			#{ktlb},
+			#{ktxz},
+			#{sfxk},
+			#{nycd},
+			#{gzl},
+			#{bjyy},
+			#{yjnr},
+			#{zsyq},
+			#{flag}
+			
+		)
+	
+	</insert>
+	<select id="findQSByNoChose" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.QsInfo">
+		select * from qs_info where no_flag is null and zdjs = #{tCode} and flag != 0
+	</select>
+
+	<select id="findQSXtbhByNoChose" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.QsInfo">
+		select xtbh from qs_info where no_flag is null 
+	</select>
+	<update id="updateChoseStudent">
+		update qs_info 
+		<set>
+			s_no = #{sNo},
+			flag = #{flag},
+			s_rws = 0,	
+			s_ktbg=3,
+			s_zqjc=0,
+			no_flag=0	
+		</set>
+		where xtbh = #{xtbh}
+	</update>
+	<update id="saveChoseStudent">
+		update qs_info 
+		<set>
+			s_no = #{sNo}
+		</set>
+		where xtbh = #{xtbh}
+	</update>
+	<select id="findAll"  resultMap="qsRM">
+		SELECT * FROM qs_info 
+			LEFT JOIN
+		(SELECT s_no sno, s_name sName FROM student_info) s
+			ON qs_info.s_no = s.sno
+		WHERE zdjs = #{tCode}
+	</select>
+	<resultMap type="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.QsInfo" id="qsRM" autoMapping="true">
+		<id column="xtbh" property="xtbh"/>
+		<association property="studentInfo"  javaType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.StudentInfo">
+			<id column="sno" property="sNo"/>
+		 	<result column="sName"  property="sName"/>
+		</association>
+	</resultMap>
+	<update id="updateSRws">
+		update qs_info <set>
+			s_rws = #{sRws},
+		</set>
+		where xtbh = #{ktbh}
+		
+	</update>
+	<update id="updataKtbg">
+		update qs_info <set>
+			s_ktbg = #{sKtbg},
+		</set>
+		where xtbh = #{ktbh}
+		
+	</update>
+	<update id="updateSZqjc">
+		update qs_info <set>
+			s_zqjc = #{sZqjc},
+		</set>
+		where xtbh = #{ktbh}
+		
+	</update>
+	<select id="findQsByXtbh" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.QsInfo">
+		select * from qs_info where xtbh = #{ktbh}
+	</select>
+	
+	<update id="updateQsInfo">
+		update qs_info <set>
+			<if test="sszy != null"> sszy=#{sszy},</if>
+			<if test="ktly != null"> ktly=#{ktly},</if>
+			<if test="fdjs != null">fdjs=#{fdjs},</if>
+			<if test="ktlb != null">ktlb=#{ktlb},</if>
+			<if test="ktxz != null"> ktxz=#{ktxz},</if>
+			<if test="sfxk != null"> sfxk=#{sfxk},</if>
+			<if test="nycd != null"> nycd=#{nycd},</if>
+			<if test="gzl != null"> gzl=#{gzl},</if>
+			<if test="bjyy != null"> bjyy=#{bjyy},</if>
+			<if test="yjnr != null"> yjnr=#{yjnr},</if>
+			<if test="zsyq != null"> zsyq=#{zsyq},</if>
+			<if test="flag != null"> flag=#{flag},</if>
+		</set>
+		where xtbh = #{xtbh}
+	</update>
+</mapper>

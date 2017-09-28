@@ -1,0 +1,152 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>课题申报</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <style type="text/css">
+    	h1,h3{
+    		text-align: center;
+    	}
+    	input[type='text']{
+    		color: blue;
+    	}
+    	table{
+	    	border:#333 1px solid;
+	    	border-collapse:collapse;
+    	}
+		table th, table td {
+			border:#333 1px solid;
+			padding:10px 10px 10px 10px;
+		}
+    	#body{
+    		width: 987px;
+    		margin: 0 auto;
+    	}
+    	.info{
+    		margin-top:10px;
+    		padding:10px 15px;
+    		border: 1px solid #aaa;
+    	}
+    	.info>span{
+    		font-weight: bold;
+    	}
+		.input-middle{
+			width:180px;
+		}
+		.input-small{
+			width:50px;
+		}
+		.input-large{
+			width:390px;
+		}
+		#time{
+			float:right;
+		}
+		input[type="submit"]{
+    		float: right;
+    	}
+    </style>
+  </head>
+  
+  <body>
+  <h3>河北建筑工程学院</h3>
+  <h1>2013届本科毕业设计(论文)选题申报表</h1>
+  
+  	<div id="body">
+	  	<form action="${app }/servlet/TaskApply" method="post">
+	  	院（系）：<input type="text" value="理学院" />&nbsp;&nbsp;
+	  	专业：<input type="text" value="信息与计算科学" />&nbsp;&nbsp;
+	  	<input id="time" type="text" value="2013年3月20日" />
+	    <div class="info">
+	    	<span>基本信息</span><br/><br/>
+	    	<table>
+		    	<tr>
+		    		<td>课程名称</td>
+		    		<td colspan="5">
+		    			<input class="input-large" type="text" value="物理实验数据分析中的数学处理方法及其实现"/>
+		    		</td>
+		    		<td>课题来源</td>
+		    		<td colspan="5">
+		    			<input class="input-middle" type="text" value="教师命题"/>
+		    		</td>
+		    	</tr>
+		    	<tr>
+		    		<td>指导教师</td>
+		    		<td><input class="input-small" type="text" value="王彦勋"/></td>
+		    		<td>职称</td>
+		    		<td><input class="input-small" type="text" value="教授"/></td>
+		    		<td>年龄</td>
+		    		<td><input class=input-small type="text" value="49"/></td>
+		    		<td>辅导教师</td>
+		    		<td><input class="input-small" type="text"/></td>
+		    		<td>职称</td>
+		    		<td><input class="input-small" type="text"/></td>
+		    		<td>年龄</td>
+		    		<td><input class="input-small" type="text"/></td>
+		    	</tr>
+		    	<tr>
+		    		<td>课题类别</td>
+		    		<td colspan="3"><input class="input-middle" type="text" value="软件开发"/></td>
+		    		<td>课题性质</td>
+		    		<td colspan="3"><input class="input-middle" type="text" value="模拟"/></td>
+		    		<td>是否新开</td>
+		    		<td colspan="3"><input class="input-middle" type="text" value="是"/></td>
+		    	</tr>
+		    	<tr>
+		    		<td>难易程度</td>
+		    		<td colspan="3"><input class="input-middle" type="text" value="适中"/></td>
+		    		<td>工作量</td>
+		    		<td colspan="3"><input class="input-middle" type="text" value="合理"/></td>
+		    		<td>学生人数</td>
+		    		<td colspan="3"><input class="input-middle" type="text" value="1"/></td>
+		    	</tr>
+		    	<tr>
+		    		<td>起止时间</td>
+		    		<td colspan="7"><input class="input-large" type="text" value="2013年3月18日 至 2013年6月21日"/></td>
+		    		<td>周数</td>
+		    		<td colspan="3"><input class="input-middle" type="text" value="14"/></td>
+		    	</tr>
+	    	</table>
+	    </div>
+	    <div class="info">
+		    <span>背景意义</span><br/><br/>
+		    <table>
+			    <tr>
+				  	<td colspan="7"><textarea rows="8" cols="113">bjyy</textarea></td>  
+				</tr>
+			</table>
+		</div>
+	    <div class="info">
+		    <span>研究内容</span><br/><br/>
+		    <table>
+			    <tr>
+				  	<td colspan="7"><textarea rows="8" cols="113">yjnr</textarea></td>  
+				</tr>
+			</table>
+		</div>
+	    <div class="info">
+		    <span>知识要求</span><br/><br/>
+		    <table>
+			    <tr>
+				  	<td colspan="7"><textarea rows="8" cols="113">zsyq</textarea></td>  
+				</tr>
+			</table>
+		</div>
+	    <div class="info">
+		    <span>审核意见</span><br/><br/>
+		    <table>
+			    <tr>
+				  	<td colspan="7"><textarea rows="8" cols="113">shyj</textarea></td>  
+				</tr>
+			</table>
+		</div>
+	    <br/>
+	  	<input type="submit" value="提交" />
+    	</form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>申报任务书表</title>
+	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	#task{
+    		margin: 0 auto;
+    		padding: 30px 20px;
+    		width: 1100px;
+    		border: 1px solid #ccc;
+    	}
+    	table{
+    		border:1px solid #333;
+    		border-collapse:collapse;
+    	}
+    	table tr, table td{
+    		padding:  5px;
+    		text-align:center;
+    		border:1px solid #555;
+    	}
+    	input[type="text"], textarea{
+    		color: blue;
+    		text-indent: 10px;
+    	}
+    	input[type="submit"]{
+    		float: right;
+    	}
+    </style>
+
+  </head>
+  
+  <body>
+  	<div id="task">
+	  	<form action="#" method="post">
+	  		<table>
+	  			<caption><h1>申报任务书表</h1></caption>
+	  			<tr>
+	  				<td>系统编号</td>
+	  				<td><input type="text" value="xtbh" /></td>
+	  				<td>年度（届）</td>
+	  				<td><input type="text" value="d_year" /></td>
+	  				<td>所属专业</td>
+	  				<td><input type="text" value="d_sszy" /></td>
+	  				<td>课题编号</td>
+	  				<td><input type="text" value="ktbh" /></td>
+	  				</tr>
+	  				<tr>
+	  				<td>审核日期</td>
+	  				<td><input type="text" value="shrq" /></td>
+	  				<td>签署日期</td>
+	  				<td><input type="text" value="qsrq" /></td>
+	  				<td>发放日期</td>
+	  				<td><input type="text" value="ffrq" /></td>
+	  				</tr>
+	  				<tr>
+	  				<td>设计目的</td>
+	  				<td colspan="7"><textarea rows="4" cols="120">sjmd</textarea></td>
+	  				</tr>
+	  				<tr>
+	  				<td>内容要求</td>
+	  				<td colspan="7"><textarea rows="4" cols="120">nryq</textarea></td>
+	  				</tr>
+	  				<tr>
+	  				<td>成果要求</td>
+	  				<td colspan="7"><textarea rows="4" cols="120">cgyq</textarea></td>
+	  				</tr>
+	  				<tr>
+	  				<td>参考文献</td>
+	  				<td colspan="7"><textarea rows="4" cols="120">ckwx</textarea></td>
+	  				</tr>
+	  				<tr>
+	  				<td>进度安排</td>
+	  				<td colspan="7"><textarea rows="4" cols="120">jdap</textarea></td>
+	  				</tr>
+	  				<tr>
+	  				<td>审核意见</td>
+	  				<td colspan="7"><textarea rows="4" cols="120">shyj</textarea></td>
+	  				</tr>
+	  			</tr>
+	  		</table>
+	  		<br/>
+	  		<input type="submit" value="提交" />
+	  	</form>
+  	</div>
+  </body>
+</html>

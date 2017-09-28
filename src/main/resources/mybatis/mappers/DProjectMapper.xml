@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hebiace.lxy.gpcps.teacherA.mapper.DProjectMapper">
+
+	<insert id="saveDProject">
+		insert into d_project (
+			xtbh,
+			d_year,
+			d_sszy,
+			ktbh,
+			sjmd,
+			nryq,
+			cgyq,
+			ckwx,
+			jdap
+		) values (
+			#{xtbh},
+			#{dYear},
+			#{dSszy},
+			#{ktbh},
+			#{sjmd},
+			#{nryq},
+			#{cgyq},
+			#{ckwx},
+			#{jdap}
+		)
+	</insert>
+	<select id="findDProjectByKtbh" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.DProject">
+		select * from d_project where ktbh = #{ktbh}
+	
+	</select>
+	<update id="updateDProject">
+		update d_project <set>
+			<if test="sjmd != null"> sjmd=#{sjmd},</if>
+			<if test="nryq != null"> nryq=#{nryq},</if>
+			<if test="cgyq != null">cgyq=#{cgyq},</if>
+			<if test="ckwx != null">ckwx=#{ckwx},</if>
+			<if test="jdap != null"> jdap=#{jdap},</if>
+		</set>
+		where ktbh = #{ktbh}
+	</update>
+	
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.hebiace.lxy.gpcps.teacherA.mapper.OReportMapper">
+
+	<select id="findOReportByKtbh" resultType="cn.edu.hebiace.lxy.gpcps.teacherA.pojo.OReport">
+		select * from o_report where ktbh = #{ktbh}
+	</select>
+	<update id="updataOReport">
+		update o_report <set>
+			<if test="yjyy != null"> yjyy=#{yjyy},</if>
+			<if test="jbnr != null"> jbnr=#{jbnr},</if>
+			<if test="yjff != null">yjff=#{yjff},</if>
+			<if test="zdgj != null"> zdgj=#{zdgj},</if>
+			<if test="ztap != null"> ztap=#{ztap},</if>
+			<if test="ckwx != null">ckwx=#{ckwx},</if>
+			<if test="dsyj != null"> dsyj=#{dsyj},</if>
+			<if test="xgjy != null"> xgjy=#{xgjy},</if>
+		</set>
+		where ktbh = #{ktbh}
+	</update>
+</mapper>
